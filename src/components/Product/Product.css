@@ -42,6 +42,11 @@
 .rating {
     margin-top: -15px;
     margin-bottom: 0;
+    align-items: center;
+}
+
+.faStar {
+    color: gold;
 }
 
 .btn-cart {

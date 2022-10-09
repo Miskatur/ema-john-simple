@@ -1,0 +1,64 @@
+.cart {
+    position: sticky;
+    top: 0;
+}
+
+.cart-header {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.cart-details {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    padding-left: 23px;
+}
+
+/* clear button  */
+.btn-clear {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255, 48, 48, 1);
+    color: white;
+    cursor: pointer;
+}
+
+.btn-clear:hover {
+    background: rgba(255, 48, 48, 0.8);
+
+}
+
+.btn-checkout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255, 153, 0, 1);
+    color: white;
+    cursor: pointer;
+}
+
+.btn-checkout a {
+    text-decoration: none;
+}
+
+.btn-checkout:hover {
+    background: rgba(255, 153, 0, 0.8);
+
+}

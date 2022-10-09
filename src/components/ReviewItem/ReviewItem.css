@@ -1,0 +1,68 @@
+.review-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(149, 160, 167, 1);
+    border-radius: 8px;
+    margin: 10px auto;
+    width: 571px;
+
+}
+
+.review-main {
+    display: flex;
+    align-items: center;
+}
+
+
+.product-text {
+    line-height: 5px;
+    margin-left: 10px;
+}
+
+.product-name {
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 21px;
+    letter-spacing: 0.0015em;
+}
+
+.product-image {
+    padding: 5px;
+    height: 91px;
+    width: 91px;
+}
+
+/* delete button styles  */
+.delete-container {
+    margin-right: 20px;
+
+}
+
+.btn-delete {
+    border: none;
+    height: 45px;
+    width: 45px;
+    background-color: rgba(235, 87, 87, 0.3);
+    border-radius: 50%;
+
+}
+
+.btn-delete:hover {
+    background-color: rgba(235, 87, 87, 0.5);
+    cursor: pointer;
+
+}
+
+.faTrashCan {
+    /* margin-right: 20px; */
+    /* padding: 10px; */
+    text-align: center;
+    color: rgba(235, 87, 87, 1);
+    font-size: 21px;
+    /* height: 21px;
+    width: 21px; */
+
+
+
+}

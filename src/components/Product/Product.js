@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart, faStar } from '@fortawesome/free-solid-svg-icons'
 import './Product.css'
 const Product = (props) => {
     const { handleAddToCart } = props;
@@ -15,7 +15,9 @@ const Product = (props) => {
                 </div>
                 <div className='product-detail'>
                     <p><small>Manufacturer : {seller}</small></p>
-                    <p className='rating'><small>Ratings : {ratings} star </small></p>
+
+                    <p className='rating'><small>Ratings : {ratings} <FontAwesomeIcon className='faStar' icon={faStar}></FontAwesomeIcon> </small></p>
+
                 </div>
 
             </div>
