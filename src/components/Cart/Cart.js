@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import './Cart.css'
-import { faCreditCard, faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
 
 const Cart = ({ cart, clearFromCartHandler, children }) => {
-    console.log(cart)
+    // console.log(cart)
     let total = 0;
     let shipping = 0;
     let quantity = 0;
