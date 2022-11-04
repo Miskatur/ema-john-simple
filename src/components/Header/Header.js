@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
-
 import logo from '../../images/Logo.svg'
 import './Header.css'
 
