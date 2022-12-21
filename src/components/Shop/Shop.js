@@ -18,7 +18,7 @@ const Shop = () => {
     const [size, setSize] = useState(10)
 
     useEffect(() => {
-        const url = `http://localhost:5000/products?page=${page}&size=${size}`
+        const url = `https://ema-john-simple-server-six.vercel.app/products?page=${page}&size=${size}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -34,7 +34,7 @@ const Shop = () => {
         const saveCart = [];
         const ids = Object.keys(storedCart)
         console.log(ids)
-        fetch(`http://localhost:5000/productsByIds`, {
+        fetch(`https://ema-john-simple-server-six.vercel.app/productsByIds`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -82,11 +82,14 @@ const Shop = () => {
             {/* products Container Component  */}
             <div className='products-container'>
                 {
-                    products.map(product => <Product
-                        product={product}
-                        key={product._id}
-                        handleAddToCart={handleAddToCart}
-                    ></Product>)
+                    products.length === 0 ?
+                        <div class="loader"></div> :
+                        products?.map(product => <Product
+                            product={product}
+                            key={product._id}
+                            handleAddToCart={handleAddToCart}
+                        ></Product>)
+
                 }
             </div>
             {/* Cart Container Component  */}

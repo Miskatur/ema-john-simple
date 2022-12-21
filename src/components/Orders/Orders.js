@@ -9,6 +9,7 @@ import ReviewItem from '../ReviewItem/ReviewItem';
 const Orders = () => {
     const { initialCart } = useLoaderData()
     const [cart, setCart] = useState(initialCart)
+    const [grandTotal, setGrandTotal] = useState(0)
 
     const handleRemoveItem = id => {
         const remaining = cart.filter(product => product._id !== id);
@@ -28,13 +29,15 @@ const Orders = () => {
                         key={product._id}
                         product={product}
                         handleRemoveItem={handleRemoveItem}
+                        setGrandTotal={setGrandTotal}
                     ></ReviewItem>)
                 }
             </div>
             <div className='cart-container'>
                 <Cart
                     clearFromCartHandler={clearFromCartHandler}
-                    cart={cart}>
+                    cart={cart}
+                    grandTotal={grandTotal}>
                     <Link to={"/shipping"}>
                         <button className='btn-review'>
                             <span>Proceed Shipping </span>

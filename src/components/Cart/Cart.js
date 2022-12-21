@@ -4,7 +4,7 @@ import './Cart.css'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
 
-const Cart = ({ cart, clearFromCartHandler, children }) => {
+const Cart = ({ cart, clearFromCartHandler, children, setGrandTotal }) => {
     // console.log(cart)
     let total = 0;
     let shipping = 0;
@@ -16,6 +16,7 @@ const Cart = ({ cart, clearFromCartHandler, children }) => {
     }
     const tax = parseFloat((total * 0.1).toFixed(2));
     const grandTotal = total + shipping + tax;
+    localStorage.setItem('total', grandTotal)
 
     return (
         <div className='cart'>
