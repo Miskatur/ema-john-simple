@@ -80,17 +80,39 @@ const Shop = () => {
     return (
         <div className='shop-container'>
             {/* products Container Component  */}
-            <div className='products-container'>
-                {
-                    products.length === 0 ?
-                        <div class="loader"></div> :
-                        products?.map(product => <Product
-                            product={product}
-                            key={product._id}
-                            handleAddToCart={handleAddToCart}
-                        ></Product>)
+            <div>
+                <div className='products-container'>
+                    {
+                        products.length === 0 ?
+                            <div class="loader"></div> :
+                            products?.map(product => <Product
+                                product={product}
+                                key={product._id}
+                                handleAddToCart={handleAddToCart}
+                            ></Product>)
 
-                }
+                    }
+                </div>
+                {/* Pagination  */}
+                <div className="pagination">
+                    <p>Currently selected Page : {page} which contains {size} products.</p>
+                    {
+                        [...Array(pages).keys()].map(number => <button
+                            key={number}
+                            onClick={() => setPage(number)}
+                            className={page === number ? 'selected' : null}
+                        >
+                            {number + 1}
+                        </button>)
+                    }
+                    <select name="" id="" className='dropdown'
+                        onChange={event => setSize(event.target.value)}>
+                        <option value="5">5</option>
+                        <option value="10" defaultValue={10}>10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
             </div>
             {/* Cart Container Component  */}
             <div className='cart-container'>
@@ -107,26 +129,7 @@ const Shop = () => {
                 </Cart>
             </div>
 
-            {/* Pagination  */}
-            <div className="pagination">
-                <p>Currently selected Page : {page} which contains {size} products.</p>
-                {
-                    [...Array(pages).keys()].map(number => <button
-                        key={number}
-                        onClick={() => setPage(number)}
-                        className={page === number ? 'selected' : null}
-                    >
-                        {number + 1}
-                    </button>)
-                }
-                <select name="" id="" className='dropdown'
-                    onChange={event => setSize(event.target.value)}>
-                    <option value="5">5</option>
-                    <option value="10" defaultValue={10}>10</option>
-                    <option value="15">15</option>
-                    <option value="20">20</option>
-                </select>
-            </div>
+
         </div>
     );
 };
